@@ -38,6 +38,7 @@
 -(void) showSuggestionView:(NSURL *)fileURL andFrame:(CGRect)frame;
 -(void) showAnimationForMsgInfo:(BOOL)flag;
 -(void) processTapGesture:(ALMessage *)alMessage;
+-(void) openUserProfile:(ALMessage *)alMessage;
 
 @end
 
@@ -61,6 +62,7 @@
 -(void)setupProgress;
 -(void)dowloadRetryButtonAction;
 -(void)hidePlayButtonOnUploading;
+-(void)tapActionForUserProfile;
 
 @property (nonatomic, strong) UILabel *sizeLabel;
 @property (nonatomic, strong) UIView *downloadRetryView;

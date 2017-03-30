@@ -507,6 +507,11 @@ UIViewController * modalCon;
     }];
 }
 
+-(void)tapActionForUserProfile
+{
+    [self.delegate openUserProfile:self.mMessage];
+}
+
 - (void)msgInfo:(id)sender
 {
     [self.delegate showAnimationForMsgInfo:YES];

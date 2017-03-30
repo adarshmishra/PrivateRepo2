@@ -14,6 +14,7 @@
 @implementation ALMediaBaseCell
 {
     float heightLocation;
+    UITapGestureRecognizer * tapForUserProfile;
 }
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -110,6 +111,11 @@
         {
             heightLocation = 280.0;
         }
+        
+        [self.mUserProfileImageView setUserInteractionEnabled:YES];
+        tapForUserProfile = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapActionForUserProfile)];
+        tapForUserProfile.numberOfTapsRequired = 1;
+        [self.mUserProfileImageView addGestureRecognizer:tapForUserProfile];
     }
     
     return self;
@@ -131,6 +137,10 @@
 
 -(void)setupProgress{
 
+}
+
+-(void)tapActionForUserProfile {
+ 
 }
 
 -(void)hidePlayButtonOnUploading

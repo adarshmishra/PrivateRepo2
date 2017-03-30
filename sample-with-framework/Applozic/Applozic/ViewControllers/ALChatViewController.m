@@ -3723,6 +3723,20 @@
     [self.mActivityIndicator stopAnimating];
 }
 
+- (void)openUserProfileVC:(ALMessage *)alMessage {
+    [self openUserProfile:alMessage];
+}
+
+- (void)openUserProfile:(ALMessage *)alMessage {
+
+    ALContactService *cnService = [ALContactService new];
+    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:[ALApplozicSettings getClientStoryBoard] bundle:nil];
+    NSString * viewID = [ALApplozicSettings getCustomReceiverVC];
+    ALReceiverProfile * userProfileVC = [storyboard instantiateViewControllerWithIdentifier:viewID];
+    userProfileVC.alContact = [cnService loadContactByKey:@"userId" value:alMessage.to];
+    [self presentViewController:userProfileVC animated:YES completion:nil];
+}
+
 //==============================================================================================================================================
 #pragma mark - TAP GESTURE TO RESIGN KEYBOARD WHEN TABLE HAVE LIMITED MESSAGES
 //==============================================================================================================================================

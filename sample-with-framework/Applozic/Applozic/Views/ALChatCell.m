@@ -58,6 +58,7 @@
 {
     CGFloat msgFrameHeight;
     UITapGestureRecognizer * tapForCustomView;
+    UITapGestureRecognizer * tapForUserProfile;
 }
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -128,8 +129,12 @@
         tapForCustomView.numberOfTapsRequired = 1;
         
         self.hyperLinkArray = [NSMutableArray new];
+        
+        [self.mUserProfileImageView setUserInteractionEnabled:YES];
+        tapForUserProfile = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapActionForUserProfile)];
+        tapForUserProfile.numberOfTapsRequired = 1;
+        [self.mUserProfileImageView addGestureRecognizer:tapForUserProfile];
     }
-    
     
     return self;
     
@@ -357,7 +362,9 @@
     {
         
         NSAttributedString * attributedString = [[NSAttributedString alloc] initWithData:[self.mMessage.message dataUsingEncoding:NSUnicodeStringEncoding]
-                                                                                 options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+                                                                                 options:@{
+                                                                                           NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType
+                                                                                           } documentAttributes:nil error:nil];
         
         self.mMessageLabel.attributedText = attributedString;
     }
@@ -447,6 +454,11 @@
         
         NSLog(@"DELETE MESSAGE ERROR :: %@", error.description);
     }];
+}
+
+-(void)tapActionForUserProfile
+{
+    [self.delegate openUserProfileVC:self.mMessage];
 }
 
 -(void)msgInfo:(id)sender

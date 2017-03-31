@@ -19,7 +19,7 @@
 #import "ALChatLauncher.h"
 #import "ALMessagesViewController.h"
 
-static CGFloat const sendTextViewCornerRadius = 15.0f;
+static CGFloat const sendTextViewCornerRadius = 5.0f;
 
 #define KEYBOARD_PADDING 85
 
@@ -290,7 +290,7 @@ static CGFloat const sendTextViewCornerRadius = 15.0f;
 -(void)sendButtonUI
 {
     [self.sendButton setBackgroundColor:[ALApplozicSettings getColorForSendButton]];
-   self.sendButton.layer.cornerRadius = sendTextViewCornerRadius + 5;
+    self.sendButton.layer.cornerRadius =  self.sendButton.frame.size.width/2;
     self.sendButton.layer.masksToBounds = YES;
     
     [self.typingMessageView sendSubviewToBack:self.typeMsgBG];

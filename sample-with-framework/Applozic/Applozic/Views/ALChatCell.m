@@ -198,9 +198,9 @@
                                                           0, USER_PROFILE_WIDTH, USER_PROFILE_HEIGHT);
         }
         
-        if([ALApplozicSettings getReceiveMsgColor])
+        if([ALApplozicSettings getReceiveTextCellColor])
         {
-            self.mBubleImageView.backgroundColor = [ALApplozicSettings getReceiveMsgColor];
+            self.mBubleImageView.backgroundColor = [ALApplozicSettings getReceiveTextCellColor];
         }
         else
         {
@@ -267,9 +267,9 @@
     }
     else    //Sent Message
     {
-        if([ALApplozicSettings getSendMsgColor])
+        if([ALApplozicSettings getSendTextCellColor])
         {
-            self.mBubleImageView.backgroundColor = [ALApplozicSettings getSendMsgColor];
+            self.mBubleImageView.backgroundColor = [ALApplozicSettings getSendTextCellColor];
         }
         else
         {

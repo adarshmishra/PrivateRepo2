@@ -75,6 +75,9 @@
 #define CLIENT_STORYBOARD @"com.applozic.userdefault.CLIENT_STORYBOARD"
 #define CLIENT_RECEIVER_VC @"com.applozic.userdefault.CLIENT_RECEIVER_VC"
 #define ENABLE_CELL_SHADOW @"com.applozic.userdefault.ENABLE_CELL_SHADOW"
+#define SEND_TEXT_CELL_COLOR @"com.applozic.userdefault.SEND_TEXT_CELL_COLOR"
+#define RECEIVE_TEXT_CELL_COLOR @"com.applozic.userdefault.RECEIVE_TEXT_CELL_COLOR"
+#define CHATVIEW_BG_COLOR @"com.applozic.userdefault.CHATVIEW_BG_COLOR"
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -308,5 +311,12 @@
 
 +(BOOL)getShadowVisiblity;
 +(void)setShadowVisiblity:(BOOL)flag;
+
++(UIColor *)getSendTextCellColor;
++(UIColor *)getReceiveTextCellColor;
++(void)setColorReceiveTextCell:(UIColor *)color;
++(void)setColorSendTextCell:(UIColor *)color;
++(UIColor *)getChatViewBGColor;
++(void)setChatViewBGColor:(UIColor *)color;
 
 @end

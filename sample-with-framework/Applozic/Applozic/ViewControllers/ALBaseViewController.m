@@ -63,12 +63,7 @@ static CGFloat const sendTextViewCornerRadius = 15.0f;
     self.sendMessageTextView.textColor = self.placeHolderColor;
     self.sendMessageTextView.backgroundColor = [ALApplozicSettings getMsgTextViewBGColor];
     
-    
-    if ([ALUtilityClass parsedALChatCostomizationPlistForKey:APPLOZIC_CHAT_BACKGROUND_COLOR])
-        self.mTableView.backgroundColor = (UIColor *)[ALUtilityClass parsedALChatCostomizationPlistForKey:APPLOZIC_CHAT_BACKGROUND_COLOR];
-    else
-        self.mTableView.backgroundColor = [UIColor colorWithRed:242.0/255 green:242.0/255 blue:242.0/255 alpha:1];
-    
+    self.mTableView.backgroundColor = [ALApplozicSettings getChatViewBGColor];
     
     // Navigation width is constant
     navigationWidth = self.navigationController.navigationBar.frame.size.height + [UIApplication sharedApplication].statusBarFrame.size.height;
@@ -471,9 +466,11 @@ static CGFloat const sendTextViewCornerRadius = 15.0f;
 
 -(UIView *)customCallButtonView
 {
-    UIImageView *imageView = [[UIImageView alloc] initWithImage: [ALUtilityClass getImageFromFramworkBundle:@"PhoneIcon.png"]];
+    UIImage * phnImage = [ALUtilityClass getImageFromFramworkBundle:@"PhoneIcon.png"];
+    phnImage = [phnImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:phnImage];
     [imageView setFrame:CGRectMake(0, 0, 20, 20)];
-    [imageView setTintColor:[UIColor whiteColor]];
+    [imageView setTintColor:[ALApplozicSettings getColorForNavigationItem]];
 
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, imageView.frame.size.width, imageView.frame.size.height)];
     view.bounds = CGRectMake(view.bounds.origin.x, view.bounds.origin.y, view.bounds.size.width, view.bounds.size.height);

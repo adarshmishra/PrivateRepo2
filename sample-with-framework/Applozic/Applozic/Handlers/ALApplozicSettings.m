@@ -106,7 +106,6 @@
     NSData *barItemColorData = [NSKeyedArchiver archivedDataWithRootObject:barItemColor];
     [[NSUserDefaults standardUserDefaults] setObject:barItemColorData forKey:NAVIGATION_BAR_ITEM_COLOUR];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
 }
 
 +(UIColor *)getColorForNavigationItem
@@ -869,6 +868,48 @@ NOTIFICATION_DISABLE = 2
 {
     [[NSUserDefaults standardUserDefaults] setBool:flag forKey:ENABLE_CELL_SHADOW];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++(void)setColorSendTextCell:(UIColor *)color
+{
+    NSData *sendColorData = [NSKeyedArchiver archivedDataWithRootObject:color];
+    [[NSUserDefaults standardUserDefaults] setObject:sendColorData forKey:SEND_TEXT_CELL_COLOR];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++(void)setColorReceiveTextCell:(UIColor *)color
+{
+    NSData *receiveColorData = [NSKeyedArchiver archivedDataWithRootObject:color];
+    [[NSUserDefaults standardUserDefaults] setObject:receiveColorData forKey:RECEIVE_TEXT_CELL_COLOR];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++(UIColor *)getSendTextCellColor
+{
+    NSData *sendColorData = [[NSUserDefaults standardUserDefaults] objectForKey:SEND_TEXT_CELL_COLOR];
+    UIColor *sendColor = [NSKeyedUnarchiver unarchiveObjectWithData:sendColorData];
+    return (sendColor ? sendColor : [UIColor blueColor]);
+}
+
++(UIColor *)getReceiveTextCellColor
+{
+    NSData *receiveColorData = [[NSUserDefaults standardUserDefaults] objectForKey:RECEIVE_TEXT_CELL_COLOR];
+    UIColor *receiveColor = [NSKeyedUnarchiver unarchiveObjectWithData:receiveColorData];
+    return (receiveColor ? receiveColor : [UIColor lightGrayColor]);
+}
+
++(void)setChatViewBGColor:(UIColor *)color
+{
+    NSData *receiveColorData = [NSKeyedArchiver archivedDataWithRootObject:color];
+    [[NSUserDefaults standardUserDefaults] setObject:receiveColorData forKey:CHATVIEW_BG_COLOR];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++(UIColor *)getChatViewBGColor
+{
+    NSData *bgColorData = [[NSUserDefaults standardUserDefaults] objectForKey:CHATVIEW_BG_COLOR];
+    UIColor *bgColor = [NSKeyedUnarchiver unarchiveObjectWithData:bgColorData];
+    return (bgColor ? bgColor : [UIColor whiteColor]);
 }
 
 @end

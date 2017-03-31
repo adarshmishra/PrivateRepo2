@@ -376,16 +376,19 @@
     
     /***************************************  SEND RECEIVE MESSAGES SETTINGS  ***************************************/
     
-    [ALApplozicSettings setSendMsgTextColor:[UIColor grayColor]];
-    [ALApplozicSettings setReceiveMsgTextColor:[UIColor grayColor]];
-    [ALApplozicSettings setColorForReceiveMessages:[UIColor colorWithRed:173.0/255 green:216.0/255 blue:230.0/255 alpha:1]];
-    [ALApplozicSettings setColorForSendMessages:[UIColor colorWithRed:211.0/255 green:211.0/255 blue:211.0/255 alpha:1]];
+    [ALApplozicSettings setSendMsgTextColor:[UIColor blackColor]];
+    [ALApplozicSettings setReceiveMsgTextColor:[UIColor blackColor]];
+    [ALApplozicSettings setColorForReceiveMessages:[UIColor whiteColor]];
+    [ALApplozicSettings setColorForSendMessages:[UIColor whiteColor]];
+    [ALApplozicSettings setColorReceiveTextCell:[UIColor colorWithRed:173.0/255 green:216.0/255 blue:230.0/255 alpha:1]];
+    [ALApplozicSettings setColorSendTextCell:[UIColor colorWithRed:211.0/255 green:211.0/255 blue:211.0/255 alpha:1]];
     
     [ALApplozicSettings setCustomMessageBackgroundColor:[UIColor lightGrayColor]];              /*  SET CUSTOM MESSAGE COLOR */
     [ALApplozicSettings setCustomMessageFontSize:14];                                     /*  SET CUSTOM MESSAGE FONT SIZE */
     [ALApplozicSettings setCustomMessageFont:@"Helvetica"];
     
     [ALApplozicSettings setShadowVisiblity:NO];
+    [ALApplozicSettings setChatViewBGColor:[UIColor whiteColor]];
     
     //****************** DATE COLOUR : AT THE BOTTOM OF MESSAGE BUBBLE ******************/
     [ALApplozicSettings setDateColor:[UIColor colorWithRed:51.0/255 green:51.0/255 blue:51.0/255 alpha:0.5]];

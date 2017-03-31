@@ -860,4 +860,15 @@ NOTIFICATION_DISABLE = 2
     return [[NSUserDefaults standardUserDefaults] valueForKey:CLIENT_RECEIVER_VC];
 }
 
++(BOOL)getShadowVisiblity
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:ENABLE_CELL_SHADOW];
+}
+
++(void)setShadowVisiblity:(BOOL)flag
+{
+    [[NSUserDefaults standardUserDefaults] setBool:flag forKey:ENABLE_CELL_SHADOW];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 @end

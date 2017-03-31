@@ -376,10 +376,10 @@
     
     /***************************************  SEND RECEIVE MESSAGES SETTINGS  ***************************************/
     
-    [ALApplozicSettings setSendMsgTextColor:[UIColor whiteColor]];
+    [ALApplozicSettings setSendMsgTextColor:[UIColor grayColor]];
     [ALApplozicSettings setReceiveMsgTextColor:[UIColor grayColor]];
-    [ALApplozicSettings setColorForReceiveMessages:[UIColor colorWithRed:255/255 green:255/255 blue:255/255 alpha:1]];
-    [ALApplozicSettings setColorForSendMessages:[UIColor colorWithRed:66.0/255 green:173.0/255 blue:247.0/255 alpha:1]];
+    [ALApplozicSettings setColorForReceiveMessages:[UIColor colorWithRed:173.0/255 green:216.0/255 blue:230.0/255 alpha:1]];
+    [ALApplozicSettings setColorForSendMessages:[UIColor colorWithRed:211.0/255 green:211.0/255 blue:211.0/255 alpha:1]];
     
     [ALApplozicSettings setCustomMessageBackgroundColor:[UIColor lightGrayColor]];              /*  SET CUSTOM MESSAGE COLOR */
     [ALApplozicSettings setCustomMessageFontSize:14];                                     /*  SET CUSTOM MESSAGE FONT SIZE */

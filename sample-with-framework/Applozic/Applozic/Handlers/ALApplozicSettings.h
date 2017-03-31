@@ -74,6 +74,7 @@
 #define USER_PROFILE_TAB_TITLE @"com.applozic.userdefault.USER_PROFILE_TAB_TITLE"
 #define CLIENT_STORYBOARD @"com.applozic.userdefault.CLIENT_STORYBOARD"
 #define CLIENT_RECEIVER_VC @"com.applozic.userdefault.CLIENT_RECEIVER_VC"
+#define ENABLE_CELL_SHADOW @"com.applozic.userdefault.ENABLE_CELL_SHADOW"
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -304,5 +305,8 @@
 
 +(NSString *)getCustomReceiverVC;
 +(void)setCustomReceiverVC:(NSString *)receiverVC;
+
++(BOOL)getShadowVisiblity;
++(void)setShadowVisiblity:(BOOL)flag;
 
 @end

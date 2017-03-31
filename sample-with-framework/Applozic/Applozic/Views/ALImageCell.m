@@ -153,12 +153,7 @@ UIViewController * modalCon;
         
         self.mBubleImageView.frame = CGRectMake(self.mUserProfileImageView.frame.size.width + BUBBLE_PADDING_X,
                                                 0, viewSize.width - BUBBLE_PADDING_WIDTH, viewSize.width - BUBBLE_PADDING_HEIGHT);
-        
-        self.mBubleImageView.layer.shadowOpacity = 0.3;
-        self.mBubleImageView.layer.shadowOffset = CGSizeMake(0, 2);
-        self.mBubleImageView.layer.shadowRadius = 1;
-        self.mBubleImageView.layer.masksToBounds = NO;
-        
+
         self.mImageView.frame = CGRectMake(self.mBubleImageView.frame.origin.x + IMAGE_VIEW_PADDING_X,
                                            self.mBubleImageView.frame.origin.y + IMAGE_VIEW_PADDING_Y,
                                            self.mBubleImageView.frame.size.width - IMAGE_VIEW_PADDING_WIDTH ,
@@ -270,11 +265,6 @@ UIViewController * modalCon;
         
         self.mBubleImageView.frame = CGRectMake((viewSize.width - self.mUserProfileImageView.frame.origin.x + BUBBLE_PADDING_X_OUTBOX),
                                                 0, viewSize.width - BUBBLE_PADDING_WIDTH, viewSize.width - BUBBLE_PADDING_HEIGHT);
-        
-        self.mBubleImageView.layer.shadowOpacity = 0.3;
-        self.mBubleImageView.layer.shadowOffset = CGSizeMake(0, 2);
-        self.mBubleImageView.layer.shadowRadius = 1;
-        self.mBubleImageView.layer.masksToBounds = NO;
         
         self.mImageView.frame = CGRectMake(self.mBubleImageView.frame.origin.x + IMAGE_VIEW_PADDING_X,
                                            self.mBubleImageView.frame.origin.y + IMAGE_VIEW_PADDING_Y,
@@ -389,8 +379,21 @@ UIViewController * modalCon;
     }
     
     [self.mImageView sd_setImageWithURL:theUrl];
+    [self addShadowEffects];
+    
     return self;
     
+}
+
+-(void) addShadowEffects
+{
+    if ([ALApplozicSettings getShadowVisiblity])
+    {
+        self.mBubleImageView.layer.shadowOpacity = 0.3;
+        self.mBubleImageView.layer.shadowOffset = CGSizeMake(0, 2);
+        self.mBubleImageView.layer.shadowRadius = 1;
+        self.mBubleImageView.layer.masksToBounds = NO;
+    }
 }
 
 #pragma mark - KAProgressLabel Delegate Methods -

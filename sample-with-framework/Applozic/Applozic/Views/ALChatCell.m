@@ -140,7 +140,6 @@
     
 }
 
-
 -(instancetype)populateCell:(ALMessage*) alMessage viewSize:(CGSize)viewSize
 {
     
@@ -214,12 +213,7 @@
         self.mBubleImageView.frame = CGRectMake(self.mUserProfileImageView.frame.size.width + 13,
                                                 0, theTextSize.width + BUBBLE_PADDING_WIDTH,
                                                 theTextSize.height + BUBBLE_PADDING_HEIGHT);
-        
-        self.mBubleImageView.layer.shadowOpacity = 0.3;
-        self.mBubleImageView.layer.shadowOffset = CGSizeMake(0, 2);
-        self.mBubleImageView.layer.shadowRadius = 1;
-        self.mBubleImageView.layer.masksToBounds = NO;
-        
+                
         self.mMessageLabel.frame = CGRectMake(self.mBubleImageView.frame.origin.x + MESSAGE_PADDING_X ,
                                               self.mBubleImageView.frame.origin.y + MESSAGE_PADDING_Y,
                                               theTextSize.width, theTextSize.height);
@@ -290,11 +284,6 @@
         self.mBubleImageView.frame = CGRectMake((viewSize.width - theTextSize.width - BUBBLE_PADDING_X_OUTBOX) , 0,
                                                 theTextSize.width + BUBBLE_PADDING_WIDTH,
                                                 theTextSize.height + BUBBLE_PADDING_HEIGHT);
-        
-        self.mBubleImageView.layer.shadowOpacity = 0.3;
-        self.mBubleImageView.layer.shadowOffset = CGSizeMake(0, 2);
-        self.mBubleImageView.layer.shadowRadius = 1;
-        self.mBubleImageView.layer.masksToBounds = NO;
         
         msgFrameHeight = self.mBubleImageView.frame.size.height;
         
@@ -387,8 +376,21 @@
         [self setHyperLinkAttribute];
     }
     
+    [self addShadowEffects];
+    
     return self;
     
+}
+
+-(void) addShadowEffects
+{
+    if ([ALApplozicSettings getShadowVisiblity])
+    {
+        self.mBubleImageView.layer.shadowOpacity = 0.3;
+        self.mBubleImageView.layer.shadowOffset = CGSizeMake(0, 2);
+        self.mBubleImageView.layer.shadowRadius = 1;
+        self.mBubleImageView.layer.masksToBounds = NO;
+    }
 }
 
 -(void)dateTextSetupForALMessage:(ALMessage *)alMessage withViewSize:(CGSize)viewSize andTheTextSize:(CGSize)theTextSize

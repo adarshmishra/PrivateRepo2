@@ -390,10 +390,13 @@
 
 -(void) addShadowEffects
 {
-    self.mBubleImageView.layer.shadowOpacity = 0.3;
-    self.mBubleImageView.layer.shadowOffset = CGSizeMake(0, 2);
-    self.mBubleImageView.layer.shadowRadius = 1;
-    self.mBubleImageView.layer.masksToBounds = NO;
+    if ([ALApplozicSettings getShadowVisiblity])
+    {
+        self.mBubleImageView.layer.shadowOpacity = 0.3;
+        self.mBubleImageView.layer.shadowOffset = CGSizeMake(0, 2);
+        self.mBubleImageView.layer.shadowRadius = 1;
+        self.mBubleImageView.layer.masksToBounds = NO;
+    }
 }
 
 -(void) setupProgressValueX:(CGFloat)cooridinateX andY:(CGFloat)cooridinateY

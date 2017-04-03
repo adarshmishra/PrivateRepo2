@@ -912,4 +912,16 @@ NOTIFICATION_DISABLE = 2
     return (bgColor ? bgColor : [UIColor whiteColor]);
 }
 
++(void)setBubbleCornerRadius:(float)floatValue
+{
+    [[NSUserDefaults standardUserDefaults] setFloat:floatValue forKey:BUBBLE_CORNER_RADIUS];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++(float)getBubbleCornerRadius
+{
+    float floatValue = [[NSUserDefaults standardUserDefaults] floatForKey:BUBBLE_CORNER_RADIUS];
+    return floatValue ? floatValue : 5;
+}
+
 @end

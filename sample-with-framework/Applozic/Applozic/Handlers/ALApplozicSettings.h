@@ -78,6 +78,7 @@
 #define SEND_TEXT_CELL_COLOR @"com.applozic.userdefault.SEND_TEXT_CELL_COLOR"
 #define RECEIVE_TEXT_CELL_COLOR @"com.applozic.userdefault.RECEIVE_TEXT_CELL_COLOR"
 #define CHATVIEW_BG_COLOR @"com.applozic.userdefault.CHATVIEW_BG_COLOR"
+#define BUBBLE_CORNER_RADIUS @"com.applozic.userdefault.BUBBLE_CORNER_RADIUS"
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -318,5 +319,7 @@
 +(void)setColorSendTextCell:(UIColor *)color;
 +(UIColor *)getChatViewBGColor;
 +(void)setChatViewBGColor:(UIColor *)color;
++(float)getBubbleCornerRadius;
++(void)setBubbleCornerRadius:(float)floatValue;
 
 @end

@@ -357,13 +357,17 @@
     
     /*********************************************  NAVIGATION SETTINGS  ********************************************/
     
-    [ALApplozicSettings setStatusBarBGColor:[UIColor colorWithRed:66.0/255 green:173.0/255 blue:247.0/255 alpha:1]];
-    [ALApplozicSettings setStatusBarStyle:UIStatusBarStyleLightContent];
+//    [ALApplozicSettings setStatusBarBGColor:[UIColor colorWithRed:66.0/255 green:173.0/255 blue:247.0/255 alpha:1]];
+    [ALApplozicSettings setStatusBarBGColor:[UIColor colorWithRed:242.0/255 green:242.0/255 blue:242.0/255 alpha:1]];
+//    [ALApplozicSettings setStatusBarStyle:UIStatusBarStyleLightContent];
+    [ALApplozicSettings setStatusBarStyle:UIStatusBarStyleDefault];
     /* BY DEFAULT Black:UIStatusBarStyleDefault IF REQ. White: UIStatusBarStyleLightContent  */
     /* ADD property in info.plist "View controller-based status bar appearance" type: BOOLEAN value: NO */
     
-    [ALApplozicSettings setColorForNavigation:[UIColor colorWithRed:66.0/255 green:173.0/255 blue:247.0/255 alpha:1]];
-    [ALApplozicSettings setColorForNavigationItem:[UIColor whiteColor]];
+//    [ALApplozicSettings setColorForNavigation:[UIColor colorWithRed:66.0/255 green:173.0/255 blue:247.0/255 alpha:1]];
+    [ALApplozicSettings setColorForNavigation:[UIColor colorWithRed:242.0/255 green:242.0/255 blue:242.0/255 alpha:1]];
+//    [ALApplozicSettings setColorForNavigationItem:[UIColor whiteColor]];
+     [ALApplozicSettings setColorForNavigationItem:[UIColor grayColor]];
     [ALApplozicSettings hideRefreshButton:NO];
     [ALUserDefaultsHandler setNavigationRightButtonHidden:NO];
     [ALUserDefaultsHandler setBottomTabBarHidden:NO];
@@ -389,6 +393,7 @@
     
     [ALApplozicSettings setShadowVisiblity:NO];
     [ALApplozicSettings setChatViewBGColor:[UIColor whiteColor]];
+    [ALApplozicSettings setBubbleCornerRadius:15]; /* DO MAX 15 ONLY */
     
     //****************** DATE COLOUR : AT THE BOTTOM OF MESSAGE BUBBLE ******************/
     [ALApplozicSettings setDateColor:[UIColor colorWithRed:51.0/255 green:51.0/255 blue:51.0/255 alpha:0.5]];
@@ -458,8 +463,12 @@
     [ALApplozicSettings setVisibilityForOnlineIndicator:YES];               /*  SET VISIBILITY FOR ONLINE INDICATOR */
     UIColor * sendButtonColor = [UIColor colorWithRed:66.0/255 green:173.0/255 blue:247.0/255 alpha:1]; /*  SET COLOR FOR SEND BUTTON   */
     [ALApplozicSettings setColorForSendButton:sendButtonColor];
-    [ALApplozicSettings setColorForTypeMsgBackground:[UIColor clearColor]];     /*  SET COLOR FOR TYPE MESSAGE OUTER VIEW */
-    [ALApplozicSettings setMsgTextViewBGColor:[UIColor lightGrayColor]];        /*  SET BG COLOR FOR MESSAGE TEXT VIEW */
+   
+//    [ALApplozicSettings setColorForTypeMsgBackground:[UIColor clearColor]];     /*  SET COLOR FOR TYPE MESSAGE OUTER VIEW */
+//    [ALApplozicSettings setMsgTextViewBGColor:[UIColor lightGrayColor]];        /*  SET BG COLOR FOR MESSAGE TEXT VIEW */
+    [ALApplozicSettings setColorForTypeMsgBackground:[UIColor colorWithRed:242.0/255 green:242.0/255 blue:242.0/255 alpha:1]];
+    [ALApplozicSettings setMsgTextViewBGColor:[UIColor whiteColor]];
+    
     [ALApplozicSettings setPlaceHolderColor:[UIColor grayColor]];               /*  SET COLOR FOR PLACEHOLDER TEXT */
     [ALApplozicSettings setVisibilityNoConversationLabelChatVC:YES];            /*  SET NO CONVERSATION LABEL IN CHAT VC    */
     [ALApplozicSettings setBGColorForTypingLabel:[UIColor colorWithRed:242/255.0 green:242/255.0  blue:242/255.0 alpha:1]]; /*  SET COLOR FOR TYPING LABEL  */

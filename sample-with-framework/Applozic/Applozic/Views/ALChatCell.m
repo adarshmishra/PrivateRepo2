@@ -78,7 +78,7 @@
         self.mBubleImageView = [[UIImageView alloc] init];
         self.mBubleImageView.contentMode = UIViewContentModeScaleToFill;
         self.mBubleImageView.backgroundColor = [UIColor whiteColor];
-        self.mBubleImageView.layer.cornerRadius = 5;
+        self.mBubleImageView.layer.cornerRadius = [ALApplozicSettings getBubbleCornerRadius];
         [self.contentView addSubview:self.mBubleImageView];
         
         self.mNameLabel = [[UILabel alloc] init];
@@ -142,7 +142,6 @@
 
 -(instancetype)populateCell:(ALMessage*) alMessage viewSize:(CGSize)viewSize
 {
-    
     [self.hyperLinkArray removeAllObjects];
     self.mUserProfileImageView.alpha = 1;
     
